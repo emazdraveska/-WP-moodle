@@ -46,12 +46,11 @@ public class ProjectHolder {
                 String [] data = line.split(";");
                 Project project = new Project();
 
-                SimpleDateFormat formatter = new SimpleDateFormat("yyyy-MM-dd");
-                Date date = formatter.parse(data[2]);
-
                 project.setTitle(data[0]);
                 project.setDescription(data[1]);
-                project.setDeadline(date);
+
+                SimpleDateFormat formatter = new SimpleDateFormat("yyyy-MM-dd");
+                project.setDeadline(formatter.parse(data[2]));
 
                 Course course = this.courseRepository.findById(data[3]).orElseThrow(() -> new CourseNotFoundException(data[3]));
 
