@@ -36,7 +36,7 @@ public class ProfessorHolder {
     public void init() throws FileNotFoundException {
 
         professors = new ArrayList<>();
-        File file = new File("src\\main\\java\\mk\\ukim\\finki\\moodle\\database\\professorsInfo.csv");
+        File file = new File("src\\main\\java\\mk\\ukim\\finki\\moodle\\database\\professors.csv");
         if (!file.exists())
             throw new FileNotFoundException("file");
 
